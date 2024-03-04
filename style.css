@@ -1,0 +1,50 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #42275a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #360c30, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#phone-header{
+    background-color: gray;
+    border-radius:40px 40px 0px 0px;
+
+}
+
+#container{
+    background-color: red;
+    border-radius: 40px;
+    position: absolute;
+    height: 850px;
+    width: 390px;
+    display: grid;
+    grid-template-rows: 32px 50px 1fr 50px;
+    grid-template-columns: 1fr;
+}
+
+#phone-frame{
+    width: 450px;
+    height: 900px;
+    background-image: url('imgs/iphone.png'); 
+    background-size: cover;
+    position: relative;
+}
+
+header{
+    background-color: aqua;
+}
+
+footer{
+    background-color: gray;
+    border-radius: 0px 0px 40px 40px;
+}
+
+#main-content{
+    background-color: orange;
+}
