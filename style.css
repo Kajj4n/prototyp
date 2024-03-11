@@ -24,7 +24,7 @@ body{
     height: 850px;
     width: 390px;
     display: grid;
-    grid-template-rows: 32px 50px 1fr 50px;
+    grid-template-rows: 32px 50px 50px 1fr 50px;
     grid-template-columns: 1fr;
 }
 
@@ -36,7 +36,7 @@ body{
     position: relative;
 }
 
-header{
+#search-header{
     background-color: aqua;
 }
 
