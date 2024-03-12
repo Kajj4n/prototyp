@@ -4,15 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prototyp</title> <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <div id="container">
-        <div id="phone-header"></div>
-        <div id="tab-header"></div>
-        <div id="search-header"></div>
-        <div id="main-content"></div>
-        <footer></footer>
+
+        <div id="phone-header">
+            <img src="imgs/notifications.png" alt="">
+            <img src="imgs/status.png" alt="">
+        </div>
+
+        <div id="tab-header">
+            <div id="tab">
+
+                <div>
+                    <p class="test">ALL</p>
+                </div>
+
+                <div>
+                    <p>ARTIST</p>
+                </div>
+
+                <div>
+                    <p>POP</p>
+                </div>
+                
+                <div>
+                    <img src="imgs/arrow.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <div id="search-header">
+            <form action="">
+                <div class="search">
+                    <span class="search-icon material-symbols-outlined">search</span>
+                    <input class="search-input" type="search" placeholder="Search in All">
+                </div>
+            </form>
+            <img src="imgs/sort-by-button.png" alt="">
+        </div>
+
+        <div id="main-content">
+            <div>
+                <div>
+                    <img src="imgs/combo1.png" alt="">
+                    <div class="titles">
+                        <h4>Metallica</h4>
+                        <h5>Jorn</h5>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <footer>
+            <img src="imgs/phone1.png" alt="">
+            <img src="imgs/phone2.png" alt="">
+            <img src="imgs/phone3.png" id="lower-return-button" alt="">
+        </footer>
+
     </div>
+
     <div id="phone-frame"></div>
+    <script src="script.js"></script>
 </body>
 </html>
