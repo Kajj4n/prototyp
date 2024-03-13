@@ -24,6 +24,7 @@ body{
     padding-right: 20px;
     margin-top: -10px;
     z-index: 2;
+    
 }
 
 #tab{
@@ -32,7 +33,6 @@ body{
     justify-content: flex-start;
     border-radius: 30px;
     height: 40px;
-    width: 100%;
     background-color: #1B1B1B;
     width: 100%;
     height: 26px;
@@ -102,7 +102,7 @@ body{
 
 #search-header img {
     height: 20px;
-    margin-right: 5px;
+    margin-right: 7px;
 }
 
 .search{
@@ -124,11 +124,9 @@ body{
     margin-left: 5px;
     outline: none;
     border: none;
-    background: transparent;
 }
 
-.search-input::placeholder, .search-icon{
-    color: rgba(0, 0, 0, alpha);
+.search-input::placeholder{
     font-size: 10px;
 }
 
@@ -137,8 +135,6 @@ body{
     color: rgba(0, 0, 0, alpha);
     margin-left: -5px;
 }
-
-
 
 #container{
     background-color: red;
@@ -169,30 +165,26 @@ footer{
 }
 
 footer img{
-    height: 25px;
+    height: 18px;
 }
 
 #main-content{
     background-color: black;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
     z-index: 2;
 
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
 
-    /* Hide scrollbar for WebKit (Chrome, Safari) */
     ::-webkit-scrollbar {
         display: none;
     }
 }
 
-#main-content::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
-}
-
 #main-content > div{
+    position: relative;
     display: grid;
     grid-template-rows: 100px 35px;
     border-radius: 20px;
@@ -205,21 +197,83 @@ footer img{
 #main-content > div div:nth-child(1){
     display: flex;
     align-items: center;
-    background-color: #360c30;
     border-radius: 20px 20px 0px 0px;
-
 }
 
-h4{
+.titles{
+    margin-top: -25px;
+}
+
+.titles > p{
     color: white;
     font-weight: 500;
     align-self: normal;
-    margin-left: 15px ;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
-#main-content div img{
+.titles > img{
+    height: 18px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.titles > p > img{
+    height: 20px;
+    margin-bottom: -5px;
+}
+
+span{
+    color: #939393;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.amp{
     height: 70px;
     padding-left: 20px;
-    padding-top: 10px;
 }
 
+.icons{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0px;
+    padding-bottom: 5px;
+}
+
+.icons > div{
+    position: relative;
+}
+.icons p{
+    position: absolute;
+    margin-top: -22px;
+    margin-left: 57px;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.icons > div > img{
+    margin-right: 15px;
+}
+
+.icons > div > img:nth-child(2){
+    margin-right: 60px;
+}
+
+.icons img{
+    height: 18px;
+}
+
+.icons > img{
+    margin-top: -5px;
+    margin-left: 56px;
+}
+
+#heart{
+    height: 13px;
+    margin-bottom: 3px;
+}
