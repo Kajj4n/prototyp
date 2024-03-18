@@ -1,3 +1,8 @@
+@font-face {
+    font-family:"inter";
+    src: url(font/Inter-VariableFont_slnt\,wght.ttf);
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -5,17 +10,10 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #42275a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #360c30, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: black;
     font-family:"inter";
 }
 
-
-@font-face {
-    font-family:"inter";
-    src: url(font/Inter-VariableFont_slnt\,wght.ttf);
-}
 #tab-header{
     background-color: black;
     display: flex;
@@ -23,8 +21,8 @@ body{
     padding-left: 20px;
     padding-right: 20px;
     margin-top: -10px;
-    z-index: 2;
-    
+    z-index: 6;
+    transition: 0.75s;
 }
 
 #tab{
@@ -34,8 +32,18 @@ body{
     border-radius: 30px;
     height: 40px;
     background-color: #1B1B1B;
-    width: 100%;
-    height: 26px;
+    height: max-content;
+    width: 360px;
+
+
+    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 #tab img{
@@ -46,20 +54,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 107px;
+    width: 107px; 
     height: 26px;
     border: 1px solid black;
+    flex-shrink: 0;
 }
-#tab div:nth-child(4){
-    width: 32px;
-    border-right: 0px;
-    border-radius: 0px 30px 30px 0px;
-}
+
 
 #tab div:nth-child(1){
     border-radius: 30px 0px 0px 30px;
-    border: 1px solid #FFF;
-    background: #E01F22;
+}
+
+#tab div:nth-child(12){
+    border-radius: 0px 30px 30px 0px;
 }
 
 #tab div:nth-child(1) p{
@@ -74,6 +81,19 @@ body{
     font-weight: 400;
     line-height: normal;
 }
+
+#continue {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#continue > img{
+    position: absolute;
+    left: 10px;
+}
+
 
 #phone-header{
     background-color: black;
@@ -97,12 +117,18 @@ body{
     padding-left: 20px;
     padding-right: 20px;
     margin-top: -15px;
-    z-index: 2;
+    z-index: 6;
+    transition: 0.75s;
 }
 
-#search-header img {
+#search-header > img {
     height: 20px;
     margin-right: 7px;
+}
+
+.search > img{
+    height: 15px;
+    margin-right: 5px;
 }
 
 .search{
@@ -121,12 +147,17 @@ body{
     font-size: 16px;
     font-family: "inter";
     color: black;
-    margin-left: 5px;
     outline: none;
     border: none;
 }
 
 .search-input::placeholder{
+    font-size: 10px;
+}
+
+.search-input::placeholder{
+    opacity: 1;
+    color: black;
     font-size: 10px;
 }
 
@@ -137,9 +168,9 @@ body{
 }
 
 #container{
-    background-color: red;
+    overflow: hidden;
     border-radius: 40px;
-    position: absolute;
+    position: relative;
     height: 865px;
     width: 400px;
     display: grid;
@@ -152,16 +183,18 @@ body{
     height: 900px;
     background-image: url('imgs/iphone2.png'); 
     background-size: cover;
-    position: relative;
+    position: absolute;
+    z-index: 5;
     
 }
 
 footer{
     background-color: #D9D9D9;
-    border-radius: 0px 0px 40px 40px;
+    border-radius: 0px 0px 50px 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    z-index: 8;
 }
 
 footer img{
@@ -172,7 +205,11 @@ footer img{
     background-color: black;
     padding-left: 15px;
     padding-right: 15px;
-    z-index: 2;
+    position: relative;
+    z-index: 6;
+    transition: 0.5s;
+
+
 
     overflow-y: scroll;
     -ms-overflow-style: none; 
@@ -209,7 +246,7 @@ footer img{
     font-weight: 500;
     align-self: normal;
     margin-left: 15px;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .titles > img{
@@ -220,19 +257,28 @@ footer img{
 }
 
 .titles > p > img{
-    height: 20px;
-    margin-bottom: -5px;
+    height: 22px;
+    margin-bottom: -10px;
 }
 
-span{
-    color: #939393;
+.genre{
+    display: none;
+}
+
+.titles :nth-child(4){
+    color: gray;
     font-size: 12px;
     font-weight: 400;
+    margin-left: 3px;
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 7px;
 }
 
 .amp{
-    height: 70px;
-    padding-left: 20px;
+    height: 60px;
+    padding-left: 15px;
+    margin-top: -12px;
 }
 
 .icons{
@@ -253,11 +299,15 @@ span{
     margin-left: 57px;
     color: white;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .icons > div > img{
     margin-right: 15px;
+}
+
+.icons > div > img:hover{
+    cursor: pointer;
 }
 
 .icons > div > img:nth-child(2){
@@ -270,10 +320,222 @@ span{
 
 .icons > img{
     margin-top: -5px;
-    margin-left: 56px;
+    margin-left: 45px;
 }
 
-#heart{
-    height: 13px;
+.heart{
+    height: 13px !important;
     margin-bottom: 3px;
+}
+
+
+#add-tone{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 250px auto;
+    visibility: visible;
+    height: 235px;
+    border-radius: 20px 20px 0px 0px;
+    bottom: 0;
+    position: absolute;
+    background-color: #101010;
+    justify-self: center;
+    z-index: 7;
+    width: 100%;
+    transition: 0.75s;
+    margin-bottom: -300px;
+}
+
+
+#add-tone > div:nth-child(1) > div{
+    display: flex;
+    align-items: center;
+}
+
+#add-tone > div:nth-child(1) > div span{
+    font-size: 17px;
+    margin-left: 10px;
+    color: white;
+}
+
+#add-tone > div:nth-child(1){
+    margin: 20px;
+}
+
+
+#add-tone > div:nth-child(2){
+    margin: 20px;
+    display: grid;
+    justify-content: center;
+    position: relative;
+}
+
+#add-tone > div:nth-child(2) > img:nth-child(1){
+    position: relative;
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 80px;
+    right: 0;
+}
+
+#add-tone > div:nth-child(2) > img:nth-child(1):hover{
+    cursor: pointer;
+}
+
+#add-tone > div:nth-child(2) > img:nth-child(2){
+    height: 70px;
+    justify-self: center;
+    margin-top: 30px;
+}
+
+#add-tone > div:nth-child(2) > button{
+    height: 28px;
+    width: 110px;
+    justify-self: center;
+    color: white;
+    margin-top: 25px;
+    border-radius: 20px;
+    border: none;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "inter";
+    cursor: pointer;
+    background-color: #E01F22;
+}
+
+#add-tone > div:nth-child(1) > button{
+    color: #E01F22;
+    width: 70px;
+    height: 20px;
+    margin-left: 6px;
+    border-radius: 20px;
+    border: none;
+    padding: 2px;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: "inter";
+    cursor: pointer;
+    background-color: white;
+}
+
+#first-form{
+    margin-top: 18px;
+}
+
+#add-tone form > div, #add-tone form > div > input  {
+    width: 170px;
+}
+
+#add-tone form > div, #add-tone form > div > input  {
+    width: 170px;
+    font-size: 12px;
+}
+
+#add-tone form > div, #add-tone form > div > p  {
+    margin-left: 2px;
+}
+
+legend{
+    color: #E01F22;
+    margin-bottom: 5px;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#add-img{
+    height: 35px;
+    margin-left: 6px;
+}
+
+#select{
+    height: 270px;
+    width: 250px;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    z-index: 1000;
+    justify-self: center;
+    border-radius: 20px;
+    padding: 20px;
+    display: none;
+}
+
+#select legend{
+    font-size: 20px;
+    margin-left: 0px;
+    color: black;
+}
+
+fieldset div{
+    padding-bottom: 7px;
+}
+
+fieldset div:nth-child(2){
+    padding-top: 3px;
+}
+
+#select button{
+    margin-top: 0px;
+    font-family: "inter";
+    background-color: white;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    color: #E01F22;
+    font-size: 15px;
+}
+
+#select button:nth-child(1){
+    margin-left: 15px;
+    color: black;
+}
+
+#select button:nth-child(2){
+    margin-right: 15px;
+}
+
+#select > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#select div label{
+    cursor: pointer;
+}
+
+
+input[type=radio].red {
+    accent-color: #E01F22;
+}
+
+fieldset{
+    border: none;
+}
+
+#genre-field{
+    cursor: pointer;
+}
+
+#confirm-text{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    width: 309px;
+    height: 80px;
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+    bottom: 110px;
+    border-radius: 20px;
+    visibility: hidden;
+}
+
+#confirm-text p {
+    text-align: center;
+    font-size: 15px;
 }
