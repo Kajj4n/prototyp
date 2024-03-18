@@ -141,6 +141,7 @@ body{
     width: 285px;
     height: 0px;
     flex-shrink: 0;
+    position: relative;
 }
 
 .search-input {
@@ -538,4 +539,11 @@ fieldset{
 #confirm-text p {
     text-align: center;
     font-size: 15px;
+}
+
+#input-img{
+    height: 9px;
+    margin-left: 160px;
+    margin-top: 1px;
+    position: absolute;
 }

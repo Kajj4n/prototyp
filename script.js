@@ -136,7 +136,7 @@ function addTone(){
 
 function returnStep(){
     footer.style.zIndex = "10"
-    phoneFrame.style.zIndex = "5"
+    phoneFrame.style.zIndex = "11"
     addToneElem.style.zIndex = "7"
 
     addToneElem.style.visibility = "invisible"
@@ -145,6 +145,7 @@ function returnStep(){
     searchHeader.style.filter = "none"
     tabHeader.style.filter = "none"
     addToneElem.style.transition = "0.75s"
+    setTimeout(fixZIndex, 750)
 }
 
 
@@ -182,9 +183,9 @@ function confirmAdd(){
     let confirmTxt = document.querySelector("#confirm-text p")
     confirmTxt.textContent = input.value + " Has Been Added to " + genre.textContent + " Library"
 
-    returnStep()
     setTimeout(visible, 350)
     setTimeout(notVisible, 3250)
+    returnStep()
 }
 
 function visible(){
@@ -193,4 +194,9 @@ function visible(){
 
 function notVisible(){
     confirmTxt.style.visibility = "hidden"
+    phoneFrame.style.zIndex = "5"
 }
+
+ function fixZIndex(){
+    phoneFrame.style.zIndex = "5"
+ }
