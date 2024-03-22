@@ -166,15 +166,24 @@ function closeChooseGenre(){
     select.style.display = "none"
     addToneElem.style.filter = "none"
 
+
     if (this.textContent == "CANCEL"){
-        return
+        for (let i = 0; i < options.length; i++){
+            options[i].checked = false
+            if(options[i].parentElement.textContent == genre.textContent){
+                options[i].checked = true
+            }
+        }
+        console.log("cancel")
     }
 
+    if (this.textContent == "OK"){
     for (let i = 0; i < options.length; i++){
         if(options[i].checked){
             genre.textContent = options[i].parentElement.textContent
         }
-    }    
+    }
+    }
 }
 
 function confirmAdd(){
